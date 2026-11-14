@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0d0e11;
+  --color-panel: #16181d;
+  --color-ember: #ff6a1f;
+  --color-volt: #2d8cff;
+  --color-gold: #f0b93a;
+  --font-display: "Sora", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+html { scroll-behavior: smooth; }
+body { background: var(--color-ink); color: #eceef3; overflow-x: hidden; }
+:focus-visible { outline: 2px solid var(--color-volt); outline-offset: 3px; }
+
+/* soft, blurred background glows: slow drift + pulse */
+.blob { animation: drift-a 28s ease-in-out infinite; }
+.blob.b { animation: drift-b 34s ease-in-out infinite; }
+.blob.c { animation: drift-a 40s ease-in-out infinite reverse; }
+@keyframes drift-a { 0%,100% { transform: translate(0,0) scale(1); opacity: .45; } 50% { transform: translate(12vw,8vh) scale(1.25); opacity: .8; } }
+@keyframes drift-b { 0%,100% { transform: translate(0,0) scale(1.1); opacity: .4; } 50% { transform: translate(-14vw,-6vh) scale(.9); opacity: .75; } }
+
+/* hero photo: fades and settles in on load */
+.unveil { animation: unveil 1.4s cubic-bezier(.2,.7,.2,1) .2s both; }
+@keyframes unveil { from { opacity: 0; filter: blur(14px); transform: scale(1.05); } to { opacity: 1; filter: blur(0); transform: none; } }
+
+/* scroll reveal */
+.reveal { opacity: 0; transform: translateY(32px); transition: opacity .8s ease, transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+.reveal.left { transform: translateX(-32px); }
+.reveal.right { transform: translateX(32px); }
+.reveal.in { opacity: 1; transform: none; }
+
+/* technology marquee */
+.marquee-track { animation: marquee 38s linear infinite; }
+.marquee-track:hover { animation-play-state: paused; }
+@keyframes marquee { to { transform: translateX(-50%); } }
+
+/* project lightbox */
+.fade-in { animation: fade-in .3s ease both; }
+.modal-in { animation: modal-in .45s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes fade-in { from { opacity: 0; } }
+@keyframes modal-in { from { opacity: 0; transform: translateY(20px) scale(.97); filter: blur(6px); } }
+
+/* contact form */
+.field { border-radius: .75rem; border: 1px solid rgb(255 255 255 / .12); background: color-mix(in srgb, var(--color-panel) 60%, transparent); padding: .8rem 1rem; transition: border-color .25s, box-shadow .25s, background-color .25s; }
+.field::placeholder { color: rgb(255 255 255 / .35); }
+.field:focus { outline: none; border-color: var(--color-volt); background: color-mix(in srgb, var(--color-ink) 70%, transparent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--color-volt) 18%, transparent), 0 0 32px -8px var(--color-volt); }
+.field[aria-invalid="true"] { border-color: #ff6b6b; }
+.field[aria-invalid="true"]:focus { box-shadow: 0 0 0 4px rgb(255 107 107 / .18); }
+.field option { color: #eceef3; background: var(--color-panel); }
+.pop-in { animation: pop-in .7s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes pop-in { from { opacity: 0; transform: scale(.94); filter: blur(8px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .blob, .unveil, .marquee-track, .fade-in, .modal-in, .pop-in { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* color themes: the default (Charcoal Orange) lives in @theme above */
+:root[data-theme="midnight"] { --color-ink: #060a18; --color-panel: #0e1530; --color-ember: #4f9dff; --color-volt: #22d3ee; }
+:root[data-theme="purple"] { --color-ink: #110f1a; --color-panel: #1b1828; --color-ember: #a78bfa; --color-volt: #f472b6; }
+:root[data-theme="emerald"] { --color-ink: #08100d; --color-panel: #101c17; --color-ember: #34d399; --color-volt: #22d3ee; }
+
+/* first visit: hide the page until the saved theme has loaded, so colors never flash */
+#root { transition: opacity .35s ease; }
+html[data-wait] #root { opacity: 0; }
+
+/* navbar background fades out at its bottom edge (no hard line) */
+.nav-fade { -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent); mask-image: linear-gradient(to bottom, #000 55%, transparent); }
+
+/* hero photo: no frame, the edges fade softly into the page */
+.photo-fade { -webkit-mask-image: radial-gradient(ellipse 72% 78% at 50% 42%, #000 58%, transparent 100%); mask-image: radial-gradient(ellipse 72% 78% at 50% 42%, #000 58%, transparent 100%); }
