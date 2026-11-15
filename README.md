@@ -36,7 +36,7 @@ This is my personal portfolio website, built to present my frontend projects, sk
 ## Projects Showcased
 
 | Project | Built With | 
-| --- | --- | --- |
+| --- | --- | 
 | **Hirrd**, a full job portal | React, Tailwind CSS, shadcn/ui, Supabase, Clerk | 
 | **Travel App** | Next.js 16, TypeScript, Tailwind CSS v4, deployed on Vercel | 
 | **Car Showroom App** | Next.js, TypeScript, Tailwind CSS v4, HeadlessUI, RapidAPI |
