@@ -7,7 +7,7 @@
 [Live Demo](https://your-portfolio.vercel.app) .
 
 <!-- Replace with a real screenshot or a short GIF of the Home page -->
-<img src="./screenshots/home.png" alt="Portfolio home page preview" width="90%" />
+<img src="./screenshots/HomaePage4.png" alt="Portfolio home page preview" width="90%" />
 
 </div>
 
@@ -51,11 +51,11 @@ Everything on the site can be managed from a built-in, password-protected Admin 
 
 | Home | 
 | --- | --- |
-| ![Home](./screenshots/home.png) |
+| ![HomePage](./screenshots/homePage4.png) |
 
 | About | 
 | --- | --- |
-| ![About](./screenshots/about.png) | 
+| ![AboutPage](./screenshots/AboutPage.png) | 
 
 <!-- Add your screenshots to a /screenshots folder in the repo -->
 
