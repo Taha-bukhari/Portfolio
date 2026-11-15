@@ -7,7 +7,7 @@
 [Live Demo](https://your-portfolio.vercel.app) .
 
 <!-- Replace with a real screenshot or a short GIF of the Home page -->
-<img src="./screenshots/HomaePage4.png" alt="Portfolio home page preview" width="90%" />
+<img src="./screenshots/HomePage4.png" alt="Portfolio home page preview" width="90%" />
 
 </div>
 
@@ -15,9 +15,7 @@
 
 ## About This Project
 
-This is my personal portfolio website, built to present my frontend projects, skills, certificates and achievements to recruiters and hiring managers. I am a BSc Computer Science student and online mathematics tutor looking for my first internship or junior frontend developer role, so the site focuses on real projects instead of work history.
-
-Everything on the site can be managed from a built-in, password-protected Admin Panel, so I can add new projects, experience and certificates without touching the code.
+This is my personal portfolio website, built to present my frontend projects, skills, certificates and achievements to recruiters and hiring managers. I am a BSCS Computer Science student and online mathematics tutor looking for my first internship or junior frontend developer role, so the site focuses on real projects instead of work history.
 
 ---
 
@@ -37,7 +35,7 @@ Everything on the site can be managed from a built-in, password-protected Admin 
 
 ## Projects Showcased
 
-| Project | Built With | Links |
+| Project | Built With | 
 | --- | --- | --- |
 | **Hirrd**, a full job portal | React, Tailwind CSS, shadcn/ui, Supabase, Clerk | 
 | **Travel App** | Next.js 16, TypeScript, Tailwind CSS v4, deployed on Vercel | 
@@ -49,16 +47,15 @@ Everything on the site can be managed from a built-in, password-protected Admin 
 
 ## Screenshots
 
-| Home | 
-| --- | --- |
-| ![HomePage](./screenshots/homePage4.png) |
+ **HomePage**
+ 
+ ![HomePage](./screenshots/HomePage4.png) 
 
-| About | 
-| --- | --- |
-| ![AboutPage](./screenshots/AboutPage.png) | 
+ **AboutPage**
+ 
+ ![AboutPage](./screenshots/AboutPage.png) 
 
 <!-- Add your screenshots to a /screenshots folder in the repo -->
-
 ---
 
 ## Contact
